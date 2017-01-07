@@ -1,0 +1,31 @@
+{
+  "name": "blanksparrow.com",
+  "version": "1.0.0",
+  "description": "blanksparrow website",
+  "main": "app.js",
+  "dependencies": {
+    "csshake": "^1.5.1",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlankSparrow/blanksparrow.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlankSparrow/blanksparrow.com/issues"
+  },
+  "homepage": "https://github.com/BlankSparrow/blanksparrow.com"
+}

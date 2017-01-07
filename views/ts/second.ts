@@ -1,0 +1,1 @@
+var number : number = 7;

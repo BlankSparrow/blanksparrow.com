@@ -13,8 +13,8 @@ gulp.task('default', ['watch'], function () {
 });
 
 gulp.task('watch', ['sass', 'typescript', 'images', 'fonts', 'svg', 'browser-sync', 'nodemon'], function (){
-  gulp.watch('views/scss/**/*.scss', ['sass']); 
-	gulp.watch('views/ts/**/*.ts', ['typescript']);
+  gulp.watch('styles/scss/**/*.scss', ['sass']); 
+	gulp.watch('scripts/ts/**/*.ts', ['typescript']);
 	gulp.watch('views/images/*', ['images']); 
 	gulp.watch('views/svg/*', ['svg']); 
 	gulp.watch('views/fonts/*', ['fonts']); 
@@ -22,25 +22,25 @@ gulp.task('watch', ['sass', 'typescript', 'images', 'fonts', 'svg', 'browser-syn
 })
 
 gulp.task('images', function() {
-    gulp.src('views/images/*')
+    gulp.src('assets/images/*')
         .pipe(imagemin())
 				.pipe(webp())
         .pipe(gulp.dest('public/images'))
 });
 
 gulp.task('svg', function() {
-    gulp.src('views/svg/*')
+    gulp.src('assets/svg/*')
         .pipe(imagemin())
         .pipe(gulp.dest('public/svg'))
 });
 
 gulp.task('fonts', function() {
-    gulp.src('views/fonts/*')
+    gulp.src('assets/fonts/*')
         .pipe(gulp.dest('public/fonts'))
 });
 
 gulp.task('typescript', function () {
-    return gulp.src('views/ts/**/*.ts')
+    return gulp.src('scripts/ts/**/*.ts')
       .pipe(ts({
       	noImplicitAny: true,
 				out: 'main.js'
@@ -53,7 +53,7 @@ gulp.task('typescript', function () {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('views/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+  return gulp.src('styles/scss/**/*.scss') // Gets all files ending with .scss in app/scss
     .pipe(sass({includePaths: ['./views/scss']}).on('error', sass.logError))
 		.pipe(cssnano({ autoprefixer: { add: true} }))
     .pipe(gulp.dest('public/css'))

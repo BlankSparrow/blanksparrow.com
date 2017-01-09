@@ -6,6 +6,7 @@ const	ts 						= require('gulp-typescript');
 const	uglify 				= require('gulp-uglify');
 const	webp 					= require('gulp-webp');
 const imagemin 			= require('gulp-imagemin');
+//const responsive 		= require('gulp-responsive');
 const browserSync 	= require('browser-sync');
 
 

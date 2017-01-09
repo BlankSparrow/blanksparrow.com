@@ -1,1 +1,1 @@
-var number : number = 7;
+//var number : number = 7;

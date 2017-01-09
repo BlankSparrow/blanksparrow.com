@@ -1,1 +1,1 @@
-var test="hello world",number=7;
+for(var circles=document.getElementsByClassName("circle"),i=0;i<circles.length;i++)circles[i].setAttribute("onclick","this.classList.toggle('circle-active');");

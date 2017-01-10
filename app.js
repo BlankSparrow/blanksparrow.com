@@ -23,5 +23,10 @@ app.get('/about', function(req, res) {
     res.render('pages/about');
 });
 
+// mask page 
+app.get('/mask', function(req, res) {
+    res.render('pages/mask');
+});
+
 app.listen(8080);
 console.log('8080 is the magic port');

@@ -1,76 +1,39 @@
 .circle {
-    background: #ff0;
-    width: 200px;
-    height: 200px;
-    -webkit-transition: all 800ms cubic-bezier(.13,.01,0.1,1.1);
-    transition:         all 800ms cubic-bezier(.13,.01,0.1,1.1);
+    min-width: 200px;
+    min-height: 200px;
     margin: 2px;
     padding: 0%;
     display: inline-flex;
-    -webkit-clip-path: circle(100px at 50% 50%);
-    clip-path: circle(100px at 50% 50%);
-    backface-visibility: hidden;
+    -webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+    
+    
+    border-radius: 50%;
+    
 }
 
-.circle:hover {
-    background: #f00;
-    width: 250px;
-    height: 250px;
-    -webkit-clip-path: circle(125px at 50% 50%);
-    clip-path: circle(125px at 50% 50%);
-    -webkit-transition: all 300ms cubic-bezier(.13,.01,0.1,1.1);
-    transition:         all 300ms cubic-bezier(.13,.01,0.1,1.1);
-    backface-visibility: hidden;
-}
-
-.circle:active {
-    -webkit-transition: all 100ms cubic-bezier(.13,.01,0.1,1.1);
-    transition:         all 100ms cubic-bezier(.13,.01,0.1,1.1);
-}
 
 .circle-active{
-    display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
     width: 200%;
     height: 200%;
     visibility: visible;
-    z-index: 10;
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    -webkit-transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition:         all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.circle-mask{
-    -webkit-transition: all 300ms cubic-bezier(.13,.01,0.1,1.1);
-    transition:         all 300ms cubic-bezier(.13,.01,0.1,1.1);
-    -webkit-clip-path: circle(100% at 50% 50%);
-    clip-path: circle(100% at 50% 50%);
+   -webkit-transition: width,height 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+   transition:         width,height cubic-bezier(0.215, 0.61, 0.355, 1); 
+   z-index: 2;
 }
 
 .circle-hidden{
-    width: 0%;
-    height: 100%;
-    z-index: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+     transform: translate(50%,50%);
+    width: 0px;
+    height: 0px;
+
     visibility: hidden;
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    -webkit-transition: all 100ms cubic-bezier(.13,.01,0.1,1.1);
-    transition:         all 100ms cubic-bezier(.13,.01,0.1,1.1);
+    -webkit-transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition:         all 200ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+  z-index: 2;
 }
 
-.circle-active:hover{
-    display: flex;
-  align-items: center;
-  justify-content: center;
-    width: 200%;
-    height: 200%;
-    visibility: visible;
-    z-index: 10;
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    -webkit-transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition:         all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    backface-visibility: hidden;
-}

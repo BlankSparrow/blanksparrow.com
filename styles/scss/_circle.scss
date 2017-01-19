@@ -1,39 +1,60 @@
+.center {
+  display: flex;
+    background: #EEEEEE;
+    justify-content: center;
+    width: unset;
+    height: unset;
+    transform: rotate(20deg);
+}
+
+.center-active{
+    transform: rotate(0deg);
+    width: 100%;
+    height: 100%;
+}
+
+.top-wrapper {
+  display: inline-block;
+    align-items: flex-end;
+}
+
+.bottom-wrapper {
+  display: inline-block;
+  align-items: flex-start;
+}
+
+.wrapper-active{
+  }
+
+.wrapper-hidden{
+}
+
+.top-left, .bottom-left{
+    justify-content: flex-end;
+}
+
+.top-right, .bottom-right{
+justify-content: flex-start;
+}
+
 .circle {
     min-width: 200px;
     min-height: 200px;
-    margin: 2px;
+    margin: 1px;
     padding: 0%;
-    display: inline-flex;
-    -webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
-    
-    
     border-radius: 50%;
-    
 }
 
+.circle:hover{
+  min-width: 240px;
+  min-height: 240px;
+}
 
 .circle-active{
-    position: absolute;
-    width: 200%;
-    height: 200%;
     visibility: visible;
-   -webkit-transition: width,height 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-   transition:         width,height cubic-bezier(0.215, 0.61, 0.355, 1); 
-   z-index: 2;
 }
 
 .circle-hidden{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-     transform: translate(50%,50%);
-    width: 0px;
-    height: 0px;
-
-    visibility: hidden;
-    -webkit-transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition:         all 200ms cubic-bezier(0.215, 0.61, 0.355, 1); 
-  z-index: 2;
+  visibility: hidden;
 }
 

@@ -11,4 +11,11 @@ body {
   justify-content: center
 }
 
-
+.footer{
+    color: #AAA;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+}

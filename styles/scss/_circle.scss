@@ -1,60 +1,330 @@
+$cyan-tame : rgba(150,255,255,1);
+$cyan-amped : rgba(75,255,255,1);
+$cyan-extreme : rgba(0,240,240,1);
+
+$magenta-tame : rgba(255,150,255,1);
+$magenta-amped : rgba(255,75,255,1);
+$magenta-extreme : rgba(240,0,240,1);
+
+$yellow-tame : rgba(255,255,150,1);
+$yellow-amped : rgba(255,255,75,1);
+$yellow-extreme : rgba(240,240,0,1);
+
+$key-tame : rgba(70,70,70,1);
+$key-amped : rgba(50,50,50,1);
+$key-extreme : rgba(30,30,30,1);
+
+$time : 500ms;
+$color-pulse-time: 0.4s;
+$spin-delay : 1000ms;
+$easetype-old: cubic-bezier(1.000, 0, 0.000, 1);
+$easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
+
+@mixin general_transition($_time, $_transition, $_oldtransition){
+  -webkit-transition: all $_time $_oldtransition; /* older webkit */
+  -webkit-transition: all $_time $_transition; 
+  -moz-transition: all $_time $_transition; 
+  transition: all $_time $_transition; /* custom */
+}
+
+@mixin transform_origin($_width, $_height){
+  -ms-transform-origin: $_width $_height; /* IE 9 */
+  -webkit-transform-origin: $_width $_height; /* Chrome, Safari, Opera */
+  transform-origin: $_width $_height;
+}
+
+.circle {
+  min-width: 200px;
+  min-height: 200px;
+  width: 0%;
+  height: 0%;
+  margin: 1px;
+  padding: 0%;
+  border-radius: 50%;
+  overflow: hidden;
+  @include general_transition($time, $easetype, $easetype-old);
+}
+
 .center {
   display: flex;
-    background: #EEEEEE;
-    justify-content: center;
-    width: unset;
-    height: unset;
-    transform: rotate(20deg);
+  align-items: center;
+  justify-content: center;
+  background: #EEEEEE;
+  min-width: 400px;
+  min-height: 400px;
+  width:0%;
+  height:0%;
+  transform: rotate(20deg);
+  z-index: 1;
+  @include general_transition($spin-delay, $easetype, $easetype-old);
 }
 
 .center-active{
-    transform: rotate(0deg);
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  @include general_transition($spin-delay, $easetype, $easetype-old);
 }
 
 .top-wrapper {
   display: inline-block;
-    align-items: flex-end;
+  align-items: flex-end;
+  @include general_transition($time, $easetype, $easetype-old);
 }
 
 .bottom-wrapper {
   display: inline-block;
   align-items: flex-start;
+  @include general_transition($time, $easetype, $easetype-old);
 }
 
 .wrapper-active{
+  display: flex;
+}
+
+.top-left-align{
+  justify-content: flex-end;
+  background: $cyan-amped;
+  width: 100%;
+  min-width:200px;
+  -webkit-animation: cyan-pulse-backwards $color-pulse-time steps(20) forwards;
+    animation: cyan-pulse-backwards $color-pulse-time steps(20) forwards;
+  @include general_transition($time, $easetype, $easetype-old);
+  
+}
+.top-left-align:not(.top-left-active):not(.top-left-hidden):hover{
+    -webkit-animation: cyan-pulse $color-pulse-time steps(20) forwards;
+    animation: cyan-pulse $color-pulse-time steps(20) forwards;
+    @include general_transition($time, $easetype, $easetype-old);
   }
 
-.wrapper-hidden{
+
+  @-webkit-keyframes cyan-pulse{
+    0% { background: $cyan-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $cyan-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $cyan-amped; min-width: 220px; min-height:220px}
+  }
+  
+  @keyframes cyan-pulse{
+    0% { background: $cyan-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $cyan-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $cyan-amped; min-width: 220px; min-height:220px}
+  }
+
+
+  @-webkit-keyframes cyan-pulse-backwards{
+    0% { background: $cyan-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $cyan-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $cyan-amped; min-width:200px; min-height:200px}
+  }
+  
+  @keyframes cyan-pulse-backwards{
+    0% { background: $cyan-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $cyan-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $cyan-amped; min-width:200px; min-height:200px}
+  }
+
+
+
+
+
+.top-left-active{
+  z-index: 2;
+  background: $cyan-tame;
+  @include general_transition($time, $easetype, $easetype-old);
+}
+.top-left-hidden{
+  background:$cyan-tame;
+  @include general_transition($time, $easetype, $easetype-old);
 }
 
-.top-left, .bottom-left{
-    justify-content: flex-end;
+.bottom-left-align{
+  justify-content: flex-end;
+  background:$magenta-amped;
+  width: 100%;
+  min-width:200px;
+  -webkit-animation: magenta-pulse-backwards $color-pulse-time steps(20) forwards;
+    animation: magenta-pulse-backwards $color-pulse-time steps(20) forwards;
+  @include general_transition($time, $easetype, $easetype-old);
+  
+}
+.bottom-left-align:not(.bottom-left-active):not(.bottom-left-hidden):hover{
+    -webkit-animation: magenta-pulse $color-pulse-time steps(20) forwards;
+    animation: magenta-pulse $color-pulse-time steps(20) forwards;
+    @include general_transition($time, $easetype, $easetype-old);
+  }
+
+
+  @-webkit-keyframes magenta-pulse{
+    0% { background: $magenta-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $magenta-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $magenta-amped; min-width: 220px; min-height:220px}
+  }
+  
+  @keyframes magenta-pulse{
+    0% { background: $magenta-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $magenta-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $magenta-amped; min-width: 220px; min-height:220px}
+  }
+
+
+  @-webkit-keyframes magenta-pulse-backwards{
+    0% { background: $magenta-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $magenta-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $magenta-amped; min-width:200px; min-height:200px}
+  }
+  
+  @keyframes magenta-pulse-backwards{
+    0% { background: $magenta-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $magenta-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $magenta-amped; min-width:200px; min-height:200px}
+  }
+
+.bottom-left-active{
+  z-index: 2;
+  background:$magenta-tame;
+  @include general_transition($time, $easetype, $easetype-old);
+}
+.bottom-left-hidden{
+  background:$magenta-tame;
+  @include general_transition($time, $easetype, $easetype-old);
 }
 
-.top-right, .bottom-right{
-justify-content: flex-start;
+.top-right-align{
+  justify-content: flex-start;
+  background:$yellow-amped;
+  width: 100%;
+  min-width:200px;
+  -webkit-animation: yellow-pulse-backwards $color-pulse-time steps(20) forwards;
+    animation: yellow-pulse-backwards $color-pulse-time steps(20) forwards;
+  @include general_transition($time, $easetype, $easetype-old);
+  
+}
+.top-right-align:not(.top-right-active):not(.top-right-hidden):hover{
+    -webkit-animation: yellow-pulse $color-pulse-time steps(20) forwards;
+    animation: yellow-pulse $color-pulse-time steps(20) forwards;
+    @include general_transition($time, $easetype, $easetype-old);
+  }
+
+
+  @-webkit-keyframes yellow-pulse{
+    0% { background: $yellow-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $yellow-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $yellow-amped; min-width: 220px; min-height:220px}
+  }
+  
+  @keyframes yellow-pulse{
+    0% { background: $yellow-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $yellow-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $yellow-amped; min-width: 220px; min-height:220px}
+  }
+
+
+  @-webkit-keyframes yellow-pulse-backwards{
+    0% { background: $yellow-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $yellow-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $yellow-amped; min-width:200px; min-height:200px}
+  }
+  
+  @keyframes yellow-pulse-backwards{
+    0% { background: $yellow-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $yellow-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $yellow-amped; min-width:200px; min-height:200px}
+  }
+  
+
+.top-right-active{
+  z-index: 2;
+  background:$yellow-tame;
+  @include general_transition($time, $easetype, $easetype-old);
+}
+.top-right-hidden{
+  z-index: 0;
+  background:$yellow-tame;
+  @include general_transition($time, $easetype, $easetype-old);
 }
 
-.circle {
-    min-width: 200px;
-    min-height: 200px;
-    margin: 1px;
-    padding: 0%;
-    border-radius: 50%;
+.bottom-right-align{
+  justify-content: flex-start;
+  background:$key-amped;
+  width: 100%;
+  min-width:200px;
+  -webkit-animation: key-pulse-backwards $color-pulse-time steps(20) forwards;
+    animation: key-pulse-backwards $color-pulse-time steps(20) forwards;
+  @include general_transition($time, $easetype, $easetype-old);
+  
 }
+.bottom-right-align:not(.bottom-right-active):not(.bottom-right-hidden):hover{
+    -webkit-animation: key-pulse $color-pulse-time steps(20) forwards;
+    animation: key-pulse $color-pulse-time steps(20) forwards;
+    @include general_transition($time, $easetype, $easetype-old);
+  }
 
-.circle:hover{
-  min-width: 240px;
-  min-height: 240px;
+
+  @-webkit-keyframes key-pulse{
+    0% { background: $key-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $key-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $key-amped; min-width: 220px; min-height:220px}
+  }
+  
+  @keyframes key-pulse{
+    0% { background: $key-extreme; min-width:200px; min-height:200px}
+    10%{min-width:190px; min-height:180px}
+    20% { background: $key-tame; min-width:210px; min-height:200px}
+    40% {min-width: 230px; min-height:240px}
+    100% { background: $key-amped; min-width: 220px; min-height:220px}
+  }
+
+
+  @-webkit-keyframes key-pulse-backwards{
+    0% { background: $key-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $key-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $key-amped; min-width:200px; min-height:200px}
+  }
+  
+  @keyframes key-pulse-backwards{
+    0% { background: $key-amped; min-width: 220px; min-height:220px}
+    10%{min-width: 230px; min-height:240px}
+    20% { background: $key-tame; min-width:210px; min-height:200px}
+    40%{min-width:190px; min-height:180px}
+    100% { background: $key-amped; min-width:200px; min-height:200px}
+  }
+
+.bottom-right-active{
+  z-index: 2;
+  background:$key-tame;
+  @include general_transition($time, $easetype, $easetype-old);
 }
-
-.circle-active{
-    visibility: visible;
+.bottom-right-hidden{
+  z-index: 0;
+  background:$key-tame;
+  @include general_transition($time, $easetype, $easetype-old);
 }
-
-.circle-hidden{
-  visibility: hidden;
-}
-

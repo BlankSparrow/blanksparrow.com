@@ -20,6 +20,9 @@ $spin-delay : 1000ms;
 $easetype-old: cubic-bezier(1.000, 0, 0.000, 1);
 $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
 
+$easetype-center-old: cubic-bezier(0.000, 0, 1.000, 0.280);
+$easetype-center: cubic-bezier(0.000, -0.600, 1.000, 0.280);
+
 @mixin general_transition($_time, $_transition, $_oldtransition){
   -webkit-transition: all $_time $_oldtransition; /* older webkit */
   -webkit-transition: all $_time $_transition; 
@@ -42,6 +45,8 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
   padding: 0%;
   border-radius: 50%;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
   @include general_transition($time, $easetype, $easetype-old);
 }
 
@@ -68,18 +73,21 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
 
 .top-wrapper {
   display: inline-block;
-  align-items: flex-end;
   @include general_transition($time, $easetype, $easetype-old);
 }
 
 .bottom-wrapper {
   display: inline-block;
-  align-items: flex-start;
   @include general_transition($time, $easetype, $easetype-old);
 }
 
+.wrapper-hidden{
+  display:none;
+}
+
 .wrapper-active{
-  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .top-left-align{
@@ -132,19 +140,21 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
     100% { background: $cyan-amped; min-width:200px; min-height:200px}
   }
 
-
-
-
-
 .top-left-active{
   z-index: 2;
+  width:200%;
+  transform: translate(-25%,-25%);
+  height: 200%;
   background: $cyan-tame;
   @include general_transition($time, $easetype, $easetype-old);
 }
 .top-left-hidden{
   background:$cyan-tame;
+  display: none;
   @include general_transition($time, $easetype, $easetype-old);
 }
+
+
 
 .bottom-left-align{
   justify-content: flex-end;
@@ -198,11 +208,15 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
 
 .bottom-left-active{
   z-index: 2;
+  width:200%;
+  transform: translate(-25%,-25%);
+  height: 200%;
   background:$magenta-tame;
   @include general_transition($time, $easetype, $easetype-old);
 }
 .bottom-left-hidden{
   background:$magenta-tame;
+  display: none;
   @include general_transition($time, $easetype, $easetype-old);
 }
 
@@ -259,12 +273,16 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
 
 .top-right-active{
   z-index: 2;
+  width:200%;
+  transform: translate(-25%,-25%);
+  height: 200%;
   background:$yellow-tame;
   @include general_transition($time, $easetype, $easetype-old);
 }
 .top-right-hidden{
   z-index: 0;
   background:$yellow-tame;
+  display: none;
   @include general_transition($time, $easetype, $easetype-old);
 }
 
@@ -320,11 +338,23 @@ $easetype: cubic-bezier(1.000, -0.305, 0.000, 1.050);
 
 .bottom-right-active{
   z-index: 2;
+  width:200%;
+  transform: translate(-25%,-25%);
+  height: 200%;
   background:$key-tame;
   @include general_transition($time, $easetype, $easetype-old);
 }
 .bottom-right-hidden{
   z-index: 0;
   background:$key-tame;
+  display: none;
   @include general_transition($time, $easetype, $easetype-old);
+}
+
+.content{
+  display: flex ;
+  
+  width: 50%;
+  height: 50%;
+  z-index: 3;
 }

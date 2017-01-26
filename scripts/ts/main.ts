@@ -29,7 +29,7 @@ function top_left_click(){
   top_right.classList.toggle('top-right-hidden'); 
   bottom_left.classList.toggle('bottom-left-hidden');
   bottom_right.classList.toggle('bottom-right-hidden'); 
-  top_wrapper.classList.toggle('wrapper-active');
+  top_wrapper.classList.toggle('wrapper-hidden');
   bottom_wrapper.classList.toggle('wrapper-active');
 }
 
@@ -39,7 +39,7 @@ function top_right_click(){
   top_right.classList.toggle('top-right-active'); 
   bottom_left.classList.toggle('bottom-left-hidden');
   bottom_right.classList.toggle('bottom-right-hidden'); 
-  top_wrapper.classList.toggle('wrapper-active');
+  top_wrapper.classList.toggle('wrapper-hidden');
   bottom_wrapper.classList.toggle('wrapper-active');
 }
 
@@ -50,8 +50,8 @@ function bottom_left_click(){
   top_right.classList.toggle('top-right-hidden'); 
   bottom_left.classList.toggle('bottom-left-active');
   bottom_right.classList.toggle('bottom-right-hidden'); 
-  top_wrapper.classList.toggle('wrapper-hidden');
-  bottom_wrapper.classList.toggle('wrapper-active');
+  top_wrapper.classList.toggle('wrapper-active');
+  bottom_wrapper.classList.toggle('wrapper-hidden');
 }
 
 function bottom_right_click(){
@@ -60,6 +60,6 @@ function bottom_right_click(){
   top_right.classList.toggle('top-right-hidden'); 
   bottom_left.classList.toggle('bottom-left-hidden');
   bottom_right.classList.toggle('bottom-right-active'); 
-  top_wrapper.classList.toggle('wrapper-hidden');
-  bottom_wrapper.classList.toggle('wrapper-active');
+  top_wrapper.classList.toggle('wrapper-active');
+  bottom_wrapper.classList.toggle('wrapper-hidden');
 }

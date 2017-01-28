@@ -1,6 +1,6 @@
 // server.js
 // load the things we need
-var port = process.env.port || 1337;
+var port = process.env.PORT || 1337;
 
 var express = require('express');
 var app = express();

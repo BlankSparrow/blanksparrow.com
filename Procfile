@@ -1,1 +1,1 @@
-﻿web: node start
+﻿worker: node server.js

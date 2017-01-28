@@ -1,5 +1,7 @@
 // server.js
 // load the things we need
+var port = process.env.port || 1337;
+
 var express = require('express');
 var app = express();
 
@@ -28,5 +30,5 @@ app.get('/mask', function(req, res) {
     res.render('pages/mask');
 });
 
-app.listen(8080);
-console.log('8080 is the magic port');
+app.listen(port);
+console.log(port + ' is the magic port');

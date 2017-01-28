@@ -63,27 +63,27 @@ gulp.task('sass', function() {
     }))
 });
 
-gulp.task('browser-sync', function() {
-	browserSync.init(null, {
-		proxy: "http://localhost:8080",
+gulp.task('browser-sync', function () {
+    browserSync.init(null, {
+        proxy: "http://localhost:1337",
         files: ["views/**/*.*"],
         browser: "chrome",
         port: 3000,
-	});
+    });
 });
 
 gulp.task('nodemon', function (cb) {
-	
-	var started = false;
-	
-	return nodemon({
-		script: 'app.js'
-	}).on('start', function () {
-		// to avoid nodemon being started multiple times
-		// thanks @matthisk
-		if (!started) {
-			cb();
-			started = true; 
-		} 
-	});
+
+    var started = false;
+
+    return nodemon({
+        script: 'server.js'
+    }).on('start', function () {
+        // to avoid nodemon being started multiple times
+        // thanks @matthisk
+        if (!started) {
+            cb();
+            started = true;
+        }
+    });
 });

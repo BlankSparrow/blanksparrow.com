@@ -38,6 +38,7 @@
     <Compile Include="server.js" />
     <Content Include="assets\images\len_full.jpg" />
     <Content Include="package.json" />
+    <Content Include="Procfile" />
     <Content Include="README.md" />
     <Content Include="styles\scss\styles.scss" />
     <Content Include="styles\scss\_body.scss" />

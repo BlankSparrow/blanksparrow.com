@@ -4,6 +4,7 @@
   "description": "blanksparrow website",
   "main": "server.js",
   "dependencies": {
+    "compression": "^1.6.2",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "fs": "0.0.1-security"
@@ -12,7 +13,10 @@
     "browser-sync": "^2.18.6",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
+    "gulp-htmlclean": "^2.7.9",
     "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.3.0",
+    "gulp-minify-ejs": "^1.0.3",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^3.0.0",
     "gulp-typescript": "^3.1.4",

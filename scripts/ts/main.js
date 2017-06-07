@@ -3,6 +3,7 @@
 var circles = document.getElementsByClassName("circle");
 for (var i = 0; i < circles.length; i++) {
     circles[i].setAttribute("onclick", "this.classList.toggle('circle-active');");
+    //circles[i].addEventListener("click", () => {circles[i].classList.toggle("circle-active")});
 }
 var top_wrapper = document.getElementsByClassName("top-wrapper")[0];
 var bottom_wrapper = document.getElementsByClassName("bottom-wrapper")[0];

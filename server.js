@@ -33,15 +33,83 @@ app.get('/about', (req, res) => {
     res.render('min/pages/about');
 });
 
-// about page 
+// tutorials page 
 app.get('/tutorials', (req, res) => {
-    res.render('min/pages/tutorials');
+
+        var tutorial_links = [
+            {group: 'Xamarin UITest and Maintainability',
+                links: [
+                    { title:'Lets Abstract This!',
+                      url: '/tutorials/uitest_abstaction'
+                    },
+                    { title:'Getting Raw With Calabash!',
+                    url: '/tutorials/uitest_calabash'
+                      },
+                    { title:'Unique Users For Unique Scenarios',
+                      url: '/tutorials/uitest_uniqueusers'
+                    }
+                ]
+            },
+            {group: 'Glitch Me Baby!',
+            links: [
+                { title:'Lets Abstract This!',
+                  url: '/tutorials/glitch_hexfiles'
+                },
+                { title:'Pretty Hex Examples',
+                url: '/tutorials/glitch_hexexamples'
+                  }
+            ]}
+        ]
+    
+        res.render('min/pages/tutorials_index',
+        {links: tutorial_links});
+        
+    });
+
+// tutorials page 
+app.get('/tutorials/:page', (req, res) => {
+
+    res.render('min/pages/tutorials_post',
+    { page: req.params.page});  
 });
 
-// about page 
+// portfolio page
 app.get('/portfolio', (req, res) => {
-    res.render('min/pages/portfolio');
+    var portfolio_links = [
+        {group: '2017',
+            links: [
+                { title:'Lets Abstract This!',
+                  url: '/portfolio/uitest_abstaction'
+                },
+                { title:'Getting Raw With Calabash!',
+                url: '/portfolio/uitest_calabash'
+                  },
+                { title:'Unique Users For Unique Scenarios',
+                  url: '/tutorials/uitest_uniqueusers'
+                }
+            ]
+        },
+        {group: '2016',
+        links: [
+            { title:'Lets Abstract This!',
+              url: '/portfolio/glitch_hexfiles'
+            },
+            { title:'Pretty Hex Examples',
+            url: '/portfolio/glitch_hexexamples'
+              }
+        ]}
+    ]
+
+    res.render('min/pages/portfolio_index',
+    {links: portfolio_links});
 });
+
+// portfolio page 
+app.get('/portfolio/:page', (req, res) => {
+    
+        res.render('min/pages/portfolio_post',
+        { page: req.params.page});  
+    });
 
 app.listen(port);
 console.log(port + ' is the magic port');

@@ -1,18 +1,19 @@
 html, body {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
     backface-visibility: hidden;
+    
 }
 body {
     margin: 0;
+    left: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 div.maincenter {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center }
+    justify-content: center;
+}
+
 div.maincenter p {
     margin: 0 }
 

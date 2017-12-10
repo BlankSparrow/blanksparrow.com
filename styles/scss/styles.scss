@@ -1,19 +1,5 @@
 /* some css */
 /* put this under /public/* */
 @import '_body';
-@import '_circle';
-
-.portfolioImg {
-    float:left;
-    margin-right: 20px;
-}
-.imgDetails {
-    position: relative;
-    float:left;
-    height: 280px;
-    width: 150px;
-    }
-    .imgDetails p {
-        position: absolute;
-        bottom: 0;
-        }
+@import '_navbar';
+@import '_color';

@@ -78,8 +78,8 @@ app.get('/portfolio', (req, res) => {
     var portfolio_links = [
         {group: 'Current Projects',
             links: [
-                { title:'[GAME] ',
-                  url: 'https://blanksparrow.itch.io/the-knot'
+                { title:'[GAME] Enough',
+                  url: 'https://twitter.com/search?f=tweets&q=enough%20from%3Ablanksparrow&src=typd'
                 }
             ]
         },
@@ -87,10 +87,7 @@ app.get('/portfolio', (req, res) => {
         links: [
             { title:'[GAME] Glitch Wood',
               url: 'http://www.asylumjam.com/games/glitch-wood/294919'
-            },
-            { title:'[GAME]',
-            url: '/portfolio/game_hexexamples'
-              }
+            }
         ]},
         {group: '2016',
         links: [
@@ -118,15 +115,6 @@ app.get('/portfolio', (req, res) => {
             { title:'[GAME] Run Ant, Run!',
               url: 'https://blanksparrow.itch.io/run-ant'
             }
-        ]},
-        {group: '2013',
-        links: [
-            { title:'[GAME]',
-              url: '/portfolio/game_hexfiles'
-            },
-            { title:'[GAME]',
-            url: '/portfolio/game_hexexamples'
-              }
         ]}
     ]
 

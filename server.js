@@ -76,26 +76,56 @@ app.get('/tutorials/:page', (req, res) => {
 // portfolio page
 app.get('/portfolio', (req, res) => {
     var portfolio_links = [
-        {group: '2017',
+        {group: 'Current Projects',
             links: [
-                { title:'Lets Abstract This!',
-                  url: '/portfolio/uitest_abstaction'
-                },
-                { title:'Getting Raw With Calabash!',
-                url: '/portfolio/uitest_calabash'
-                  },
-                { title:'Unique Users For Unique Scenarios',
-                  url: '/tutorials/uitest_uniqueusers'
+                { title:'[GAME] ',
+                  url: 'https://blanksparrow.itch.io/the-knot'
                 }
             ]
         },
+        {group: '2017',
+        links: [
+            { title:'[GAME] Glitch Wood',
+              url: 'http://www.asylumjam.com/games/glitch-wood/294919'
+            },
+            { title:'[GAME]',
+            url: '/portfolio/game_hexexamples'
+              }
+        ]},
         {group: '2016',
         links: [
-            { title:'Lets Abstract This!',
-              url: '/portfolio/glitch_hexfiles'
+            { title:'[GAME] Fear The Light',
+              url: 'https://itch.io/jam/lowrezjam2016/rate/62408'
             },
-            { title:'Pretty Hex Examples',
-            url: '/portfolio/glitch_hexexamples'
+            { title:'[GAME] Buttons, Adventure & Explosions',
+            url: 'https://blanksparrow.itch.io/bae'
+          },
+          { title:'[GAME] The Knot',
+          url: 'https://blanksparrow.itch.io/the-knot'
+        },
+            { title:'[WEBSITE] CLICK for encouragement',
+            url: 'http://twilightsurf.azurewebsites.net/'
+              }
+        ]},
+        {group: '2015',
+        links: [
+            { title:'[GAME] Gone',
+              url: 'https://blanksparrow.itch.io/gone'
+            }
+        ]},
+        {group: '2014',
+        links: [
+            { title:'[GAME] Run Ant, Run!',
+              url: 'https://blanksparrow.itch.io/run-ant'
+            }
+        ]},
+        {group: '2013',
+        links: [
+            { title:'[GAME]',
+              url: '/portfolio/game_hexfiles'
+            },
+            { title:'[GAME]',
+            url: '/portfolio/game_hexexamples'
               }
         ]}
     ]

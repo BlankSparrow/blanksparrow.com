@@ -37,15 +37,15 @@ app.get('/about', (req, res) => {
 app.get('/tutorials', (req, res) => {
 
         var tutorial_links = [
-            {group: 'Xamarin UITest and Maintainability',
+            {group: 'Xamarin UITest and Maintainability(not ready)',
                 links: [
-                    { title:'Lets Abstract This!',
+                    { title:'Lets Abstract This!(not ready)',
                       url: '/tutorials/uitest_abstaction'
                     },
-                    { title:'Getting Raw With Calabash!',
+                    { title:'Getting Raw With Calabash!(not ready)',
                     url: '/tutorials/uitest_calabash'
                       },
-                    { title:'Unique Users For Unique Scenarios',
+                    { title:'Unique Users For Unique Scenarios(not ready)',
                       url: '/tutorials/uitest_uniqueusers'
                     }
                 ]

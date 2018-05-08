@@ -53,13 +53,15 @@ app.get('/tutorials', (req, res) => {
             {group: 'Glitch Me Baby!',
             links: [
                 { title:'Lets Abstract This!',
-                  url: '/tutorials/glitch_hexfiles'
+                  //url: '/tutorials/glitch_hexfiles'
+                  url: 'http://blog.blanksparrow.com/post/61585665652'
                 },
                 { title:'Pretty Hex Examples',
-                url: '/tutorials/glitch_hexexamples'
+                //url: '/tutorials/glitch_hexexamples'
+                url: 'http://blog.blanksparrow.com/post/61585673576'
                   }
-            ]}
-        ]
+                ]}
+            ]
     
         res.render('min/pages/tutorials_index',
         {links: tutorial_links});

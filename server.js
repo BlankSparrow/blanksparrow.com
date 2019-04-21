@@ -33,6 +33,11 @@ app.get('/about', (req, res) => {
     res.render('min/pages/about');
 });
 
+// enough page 
+app.get('/enough/privacy_policy', (req, res) => {
+  res.render('min/pages/enough_policy');
+});
+
 // tutorials page 
 app.get('/tutorials', (req, res) => {
 

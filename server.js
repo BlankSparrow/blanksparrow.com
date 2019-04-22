@@ -25,17 +25,17 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 // index page 
 app.get('/', (req, res) => {
     
-    res.render('min/pages/index');
+    res.render('pages/index');
 });
 
 // about page 
 app.get('/about', (req, res) => {
-    res.render('min/pages/about');
+    res.render('pages/about');
 });
 
 // enough page 
 app.get('/enough/privacy_policy', (req, res) => {
-  res.render('min/pages/enough_policy');
+  res.render('pages/enough_policy');
 });
 
 // tutorials page 
@@ -76,7 +76,7 @@ app.get('/tutorials', (req, res) => {
 // tutorials page 
 app.get('/tutorials/:page', (req, res) => {
 
-    res.render('min/pages/tutorials_post',
+    res.render('pages/tutorials_post',
     { page: req.params.page});  
 });
 
@@ -93,7 +93,7 @@ app.get('/portfolio', (req, res) => {
         {group: '2017',
         links: [
             { title:'[GAME] Glitch Wood',
-              url: 'http://www.asylumjam.com/games/glitch-wood/294919'
+              url: 'https://gamejolt.com/games/glitch-wood/294919'
             }
         ]},
         {group: '2016',
@@ -125,14 +125,14 @@ app.get('/portfolio', (req, res) => {
         ]}
     ]
 
-    res.render('min/pages/portfolio_index',
+    res.render('pages/portfolio_index',
     {links: portfolio_links});
 });
 
 // portfolio page 
 app.get('/portfolio/:page', (req, res) => {
     
-        res.render('min/pages/portfolio_post',
+        res.render('pages/portfolio_post',
         { page: req.params.page});  
     });
 
